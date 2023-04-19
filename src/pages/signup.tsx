@@ -20,6 +20,18 @@ const Signup = () => {
     }
   };
 
+  const isLoggedIn = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user) {
+      console.log('user is logged in');
+    } else {
+      console.log('user is not logged in');
+    }
+  };
+
   return (
     <div>
       <h2>Signup</h2>
@@ -44,6 +56,7 @@ const Signup = () => {
 
         <button type='submit'>Sign up</button>
       </form>
+      <button onClick={isLoggedIn}>Check if logged in</button>
     </div>
   );
 };

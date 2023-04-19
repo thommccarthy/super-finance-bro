@@ -14,8 +14,10 @@ const withAuth = (Component: React.FC) => {
 
         if (user) {
           setAuthenticated(true);
+          console.log(user);
         } else {
           router.replace('/login');
+          console.log(user);
         }
         setLoading(false);
       };

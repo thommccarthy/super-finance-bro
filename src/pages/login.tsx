@@ -20,6 +20,7 @@ const Login = () => {
     } else {
       alert('Login successful!');
       // navigate to /dashboard
+      console.log(data);
       router.push('/dashboard');
     }
   };
